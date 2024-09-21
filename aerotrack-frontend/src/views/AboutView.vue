@@ -1,6 +1,9 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>
+      О нас
+    </h1>
+    <p>Aerotrack даёт возможность отслеживать рейсы на момент времени с возможностью фильтрации.</p>
   </div>
 </template>
 
@@ -9,7 +12,11 @@
   .about {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+  }
+  
+  p {
+    margin-top: 10px;
   }
 }
 </style>
