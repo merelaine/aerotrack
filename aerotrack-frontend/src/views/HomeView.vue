@@ -1,10 +1,12 @@
 <script setup>
 import MapComponent from '../components/MapComponent.vue'
+import FilterComponent from '@/components/FilterComponent.vue';
 </script>
 
 <template>
-  <div class="home">
+  <div class="home" >
     <h1>Aerotrack</h1>
+    <FilterComponent />
     <MapComponent />
   </div>
 </template>
@@ -12,13 +14,5 @@ import MapComponent from '../components/MapComponent.vue'
 <style>
 .home {
   padding-bottom: 60px;
-}
-
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
 }
 </style>
