@@ -4,15 +4,34 @@ import FilterComponent from '@/components/FilterComponent.vue';
 </script>
 
 <template>
-  <div class="home" >
-    <h1>Aerotrack</h1>
-    <FilterComponent />
-    <MapComponent />
+  <div class="content">
+    <div class="home">
+      <div class="filter-homeview">
+        <FilterComponent />
+      </div>
+      <div class="map-homeview" >
+        <MapComponent />
+      </div>
+    </div>
   </div>
+
 </template>
 
-<style>
+<script>
+export default {
+  name: 'HomeView'
+};
+</script>
+
+<style scoped>
 .home {
-  padding-bottom: 60px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.filter-homeview {
+  float: left;
+  margin-right: 5px;
 }
 </style>
+

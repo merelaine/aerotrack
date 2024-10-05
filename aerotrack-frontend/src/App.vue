@@ -1,26 +1,16 @@
 <script setup>
-import AppHeader from './components/Header.vue'
-import AppFooter from './components/Footer.vue'
+import MyCoolHeader from './components/Header.vue'
+import MyCoolFooter from './components/Footer.vue'
+import './styles/app.css'
 </script>
 
 <template>
-  <div id="app">
-    <AppHeader />
+  <div class="flex-wrapper">
+    <MyCoolHeader />
     <main>
       <router-view />
     </main>
-    <AppFooter />
+    <MyCoolFooter />
   </div>
 </template>
 
-<style>
-#app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} 
-
-main {
-  flex: 1;
-}
-</style>

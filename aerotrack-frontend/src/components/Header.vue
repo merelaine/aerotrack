@@ -1,41 +1,52 @@
 <template>
-  <header>
+  <header class="my-header">
+    <h1>Aerotrack</h1>
     <nav>
-      <ul>
-        <li><router-link to="/">Главная</router-link></li>
-        <li><router-link to="/about">О нас</router-link></li>
-      </ul>
+      <button class="my-btn navbar_btn" @click="goToHome">Главная</button>
+      <button class="my-btn navbar_btn" @click="goToAbout">О нас</button>
     </nav>
   </header>
 </template>
 
+<script setup>
+import '../styles/button.css'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goToHome = () => router.push('/');
+const goToAbout = () => router.push('/about');
+</script>
+
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'MyCoolHeader'
 }
 </script>
 
 <style scoped>
-header {
-  background-color: var(--color-background-soft);
-  height: 60px;
-  width: 100%; 
-  display: flex;
+.my-header {
+  background-color: #487fff;
+  color: #ffffff;
+  padding: 10px;
   align-items: center;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-}
-
-nav ul {
-  list-style-type: none;
   display: flex;
-  margin: 0;
-  padding: 10;
 }
 
-nav li {
-  margin-right: 15px;
-  line-height: 60px;
+.navbar_btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+h1{
+  margin: 0;
+}
+
+nav {
+  margin-left: auto;
 }
 </style>
+

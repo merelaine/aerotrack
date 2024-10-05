@@ -1,26 +1,21 @@
 <template>
-  <footer>
+  <footer class="my-footer">
     <p>&copy; aerotrack</p>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'AppFooter'
+  name: 'MyCoolFooter'
 }
 </script>
 
 <style scoped>
-footer {
-  background-color: #343a40;
+.my-footer {
+  background-color: #487fff;
   color: white;
-  height: 50px; 
-  width: 100%;
-  display: flex; 
-  align-items: center;
-  justify-content: center; 
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  padding: 1px;
+  text-align: center;
+  margin-top: auto; 
 }
 </style>
