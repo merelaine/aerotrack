@@ -1,6 +1,6 @@
 <script setup>
 import MapComponent from '../components/MapComponent.vue'
-import FilterComponent from '@/components/FilterComponent.vue';
+import FilterComponent from '../components/FilterComponent.vue';
 </script>
 
 <template>
