@@ -1,11 +1,11 @@
 <template>
-    <button>
-      <slot></slot>
-    </button>
+  <button>
+    <slot></slot>
+  </button>
 </template>
 
 <style scoped>
 button {
-    font-family: Calibri;
-  }
+  font-family: Calibri;
+}
 </style>

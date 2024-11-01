@@ -1,4 +1,4 @@
 <template>
-    <label></label>
-    <select></select>
+  <label></label>
+  <select></select>
 </template>
