@@ -1,4 +1,6 @@
-class AirportService{
+import axios from 'axios'
+
+export class AirportService{
 
     constructor(url)
     {
@@ -9,11 +11,7 @@ class AirportService{
    async getAll()
     {
         const response = await axios.get(this.url)
+        return response
     }
-
-
 }
 
-
-
-const air = new AirportService('/airports')

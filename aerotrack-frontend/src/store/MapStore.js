@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import axios from 'axios'
+import { AirportService } from '../service/airport.js'
 
 const state = {
   airports: []
@@ -14,7 +14,8 @@ const mutations = {
 const actions = {
   async fetchAirports({ commit }) {
     try {
-      const response = await axios.get('/airports')
+      const airport_service = new AirportService('http://localhost:3000/airports')
+      const response = await airport_service.getAll()
       commit('setAirports', response.data)
     } catch (error) {
       console.error('Ошибка при получении аэропортов:', error)

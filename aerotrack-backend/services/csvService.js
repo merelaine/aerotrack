@@ -11,9 +11,9 @@ const importAirportsFromCSV = async () => {
   fs.createReadStream('../data/airports.csv')
     .pipe(csv())
     .on('data', (row) => {
-      if (row.type !== 'heliport' && row.type !== 'closed') {
+      if (row.type == 'large_airport' || row.type == 'medium_airport') {
         const query = `
-          INSERT INTO airports (type, name, latitude_deg, longitude_deg, elevation_ft, continent, iso_country, iso_region, municipality, scheduled_service, gps_code, iata_code, local_code, home_link, wikipedia_link) 
+          INSERT INTO airports (type, name, lat, lon, elevation_ft, continent, iso_country, iso_region, municipality, scheduled_service, gps_code, iata_code, local_code, home_link, wikipedia_link) 
           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
         `;
         const values = [
