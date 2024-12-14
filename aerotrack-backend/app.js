@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const database = require('./config/database');
+const database = require('./config/db_config');
 const airportRoutes = require('./routes/airports');
 
 const app = express();

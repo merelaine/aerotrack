@@ -1,5 +1,5 @@
 const { Client } = require('pg');
-const databaseConfig = require('../config/database');
+const databaseConfig = require('../config/db_config');
 
 const client = new Client(databaseConfig);
 
