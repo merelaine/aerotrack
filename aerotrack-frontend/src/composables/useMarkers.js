@@ -34,28 +34,32 @@ export function useMarkers(map) {
 
   const addMarkers = () => {
     const airports = store.state.airports;
-
+    const selectedType = store.state.selectedAirportType; 
+  
     if (map.getZoom() < zoomThreshold) {
       markersMap.forEach((marker) => map.removeLayer(marker));
       markersMap.clear();
       return;
     }
-
-    if (previousZoom === map.getZoom()) {
-      return;
-    }
-
+  
+    // if (previousZoom === map.getZoom()) {
+    //   return;
+    // }
+  
     markersMap.forEach((marker) => map.removeLayer(marker));
     markersMap.clear();
-
+  
     airports.forEach(airport => {
-      const { lat, lon, name, type } = airport;
-      const marker = createMarker(lat, lon, name, type);
-      markersMap.set(`${lat},${lon}`, marker); 
+      if (!selectedType || airport.type === selectedType) { 
+        const { lat, lon, name, type } = airport;
+        const marker = createMarker(lat, lon, name, type);
+        markersMap.set(`${lat},${lon}`, marker);
+      }
     });
-
+  
     previousZoom = map.getZoom();
   };
+  
 
   const checkMarkersOnMove = () => {
     if (map.getZoom() < zoomThreshold) {

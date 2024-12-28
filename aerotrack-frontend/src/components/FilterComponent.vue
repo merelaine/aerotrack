@@ -1,14 +1,28 @@
 <template>
-  <h2>Фильтр</h2>
-  <div id="departure_city">
-    <label> Город вылета </label>
-    <select></select>
+  <div>
+    <label for="airport-type">Выберите тип аэропорта: </label>
+    <select id="airport-type" v-model="selectedType" @change="updateType">
+      <option value="">Все</option>
+      <option v-for="type in airportTypes" :key="type" :value="type">{{ type }}</option>
+    </select>
   </div>
-
-  <div id="arrival_city">
-    <label> Город прилета </label>
-    <select></select>
-  </div>
-
-  <button class="my-btn">Отфильтровать</button>
 </template>
+
+<script setup>
+import { ref, computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+const selectedType = ref('');
+
+const airportTypes = computed(() => {
+  const airports = store.state.airports;
+  const types = new Set(airports.map(airport => airport.type)); 
+  return Array.from(types);
+});
+
+const updateType = () => {
+  store.commit('setSelectedAirportType', selectedType.value);
+  console.log(store.state.selectedAirportType)
+};
+</script>

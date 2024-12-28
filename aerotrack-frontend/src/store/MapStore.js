@@ -2,13 +2,17 @@ import { createStore } from 'vuex'
 import { AirportService } from '../service/airport.js'
 
 const state = {
-  airports: []
+  airports: [],
+  selectedAirportType: '',
 }
 
 const mutations = {
   setAirports(state, airports) {
     state.airports = airports
-  }
+  },
+  setSelectedAirportType(state, type) {
+    state.selectedAirportType = type;
+  },
 }
 
 const actions = {
